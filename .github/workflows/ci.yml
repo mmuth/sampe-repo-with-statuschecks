@@ -1,0 +1,26 @@
+name: CI Build
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "building ${GITHUB_SHA}..."
+
+  test-server:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Testing the server implementation of ${GITHUB_SHA}..."
+
+  test-react:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Testing the react implementation of ${GITHUB_SHA}..."
+
+  test-libraries:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Testing the library implementation of ${GITHUB_SHA}..."
